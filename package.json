@@ -17,11 +17,10 @@
     "react-scripts": "3.0.1"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "npm run start --prefix Backend/",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "npm run start": "npm run start —prefix Backend/"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"
