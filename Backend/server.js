@@ -22,7 +22,7 @@ app.use('/api/comments',comments)
 app.use('/api/email',emails)
 
 if(process.env.NODE_ENV ==='production'){
-    app.use(express.static('/build'));
+    app.use(express.static('newsite'));
     app.get('*', (request, response) => {
         response.sendFile(path.join(__dirname, '/build', 'index.html'));
     });
