@@ -14,7 +14,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 let mongo_uri = 'mongodb+srv://Buster:Upstreambjj@cluster0-cwzms.mongodb.net/test?retryWrites=true&w=majority'
 
 mongoose
-.connect(process.env.mongo_uri,{ useNewUrlParser: true })
+.connect(mongo_uri,{ useNewUrlParser: true })
 .then(()=>console.log('MongoDB Connected'))
 .catch(err=>console.log(err));
 
