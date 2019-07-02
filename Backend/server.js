@@ -19,7 +19,7 @@ app.use('/api/comments',comments)
 app.use('/api/email',emails)
 
 if(process.env.NODE_ENV ==='production'){
-    app.use(express.static('app/build'));
+    app.use(express.static('newsite/build'));
     app.get("*",(req,res)=>{
         res.sendFile(path.resolve(__dirname,'app','build','index.html'))
     })
