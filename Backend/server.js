@@ -11,12 +11,20 @@ dotenv.config();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-let mongo_uri = 'mongodb+srv://Buster:Upstreambjj@cluster0-cwzms.mongodb.net/test?retryWrites=true&w=majority'
+/*let mongo_uri = 'mongodb+srv://Buster:Upstreambjj@cluster0-cwzms.mongodb.net/test?retryWrites=true&w=majority'
 
 mongoose
 .connect(mongo_uri,{ useNewUrlParser: true })
 .then(()=>console.log('MongoDB Connected'))
-.catch(err=>console.log(err));
+.catch(err=>console.log(err));*/
+const MongoClient = require('mongodb').MongoClient;
+const uri = "mongodb+srv://Buster:Upstreambjj@cluster0-cwzms.mongodb.net/test?retryWrites=true&w=majority";
+const client = new MongoClient(uri, { useNewUrlParser: true });
+client.connect(err => {
+  const collection = client.db("test").collection("devices");
+  // perform actions on the collection object
+  client.close();
+});
 
 app.use('/api/comments',comments)
 app.use('/api/email',emails)
