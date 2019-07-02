@@ -5,6 +5,7 @@ const app = express();
 const comments = require('./routes/api/comments');
 const emails = require('./routes/api/email');
 const path = require('path');
+const dotenv = require('dotenv');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
