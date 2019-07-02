@@ -12,7 +12,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 
 mongoose
-.connect('mongodb+srv://Buster:Upstreambjj@cluster0-cwzms.mongodb.net/test?retryWrites=true&w=majority')
+.connect('mongodb+srv://Buster:Upstreambjj@cluster0-cwzms.mongodb.net/test?retryWrites=true&w=majority',{ useNewUrlParser: true })
 .then(()=>console.log('MongoDB Connected'))
 .catch(err=>console.log(err));
 
