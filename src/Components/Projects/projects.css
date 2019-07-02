@@ -1,0 +1,41 @@
+#projectContainer{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+
+.ravenous{
+    width:46.8em;
+    background-color:#61dbfb;
+    color:white;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    margin:2em auto;
+}
+
+.upstream{
+    width:46.8em;
+    background-color:	#134F2D;
+    color:white;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    margin:2em auto;
+}
+
+.tea{
+    width:46.8em;
+    background-color:	black;
+    color:white;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    margin:2em auto;
+}
+
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 480px) {
+.tea, .upstream, .ravenous{
+    width:20em;
+    height:19em;
+}
+}

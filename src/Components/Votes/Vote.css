@@ -1,0 +1,63 @@
+#form{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+#comments{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top:1.5em;
+text-align: center;
+}
+
+#comments h2{
+    margin:0 auto;
+}
+
+.final{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+#form textarea{
+    width:25em;
+    height:10em;
+}
+
+#form label,button{
+    margin-top:1.5em;
+}
+
+#button{
+    display: flex;
+    flex-direction: column;
+    margin-top:1em;
+
+}
+
+#button h3{
+    margin:.3em auto;
+}
+
+#button h3:hover{
+    cursor:pointer;
+}
+
+
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 480px) {
+    #form label{
+        margin-top:0;
+    }
+ #form textarea{
+     width:10em;
+ }
+ #comments{
+     font-size:.6em;
+ }
+}
