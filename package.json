@@ -1,5 +1,6 @@
 {
   "name": "newsite",
+  "homepage":"https://still-ravine-83266.herokuapp.com/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
