@@ -23,7 +23,7 @@ app.use('/api/email',emails)
 if (process.env.NODE_ENV === "production"){
     // express will serve production assets ( main.js, main.css )
     // look inside client/build to serve assets
-    app.use(express.static('build'));
+    app.use(express.static('Backend/build'));
 
     // express will serve index.html if it doesnt recognize route
     const path = require('path');
