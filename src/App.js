@@ -12,7 +12,7 @@ class App extends React.Component{
 
   render(){
     return (
-      <BrowserRouter>
+      <BrowserRouter basename="/">
       <div id='opening'>
         <h1>Sidney Shuman</h1>
         <h3>Development Portfolio</h3>
