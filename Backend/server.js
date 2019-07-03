@@ -4,7 +4,6 @@ const mongoose = require('mongoose');
 const app = express();
 const comments = require('./routes/api/comments');
 const emails = require('./routes/api/email');
-const path = require('path');
 const dotenv = require('dotenv');
 dotenv.config();
 
@@ -37,5 +36,5 @@ const port = process.env.PORT || 8080;
 app.listen(port,()=>console.log(`Server started on port ${port}`));
 
 
-//test
+
 
