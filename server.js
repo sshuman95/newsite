@@ -22,15 +22,15 @@ mongoose
 
 routes(app);
 
-if (process.env.NODE_ENV === "production") {
+if (process.env.NODE_ENV !== "production") {
 	// express will serve production assets ( main.js, main.css )
 	// look inside client/build to serve assets
-	app.use(express.static("build"));
+	app.use(express.static("ui/build"));
 
 	// express will serve index.html if it doesn't recognize route
 	const path = require("path");
 	app.get("*", (req, res) => {
-		res.sendFile(path.resolve(__dirname, "build", "index.html"));
+		res.sendFile(path.resolve(__dirname, "ui", "build", "index.html"));
 	});
 }
 
