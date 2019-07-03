@@ -1,24 +1,27 @@
 {
-	"name": "newsite",
+	"name": "backend",
 	"version": "1.0.0",
-	"description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
-	"main": "index.js",
+	"description": "",
+	"main": "server.js",
 	"scripts": {
-		"start": "npm run start --prefix Backend/",
-		"getting-started": "npm i --prefix Backend/ && npm i --prefix ui/",
+		"start": "node server.js",
+		"getting-started": "npm i && npm i --prefix ui/",
+		"dev-server": "nodemon server.js",
 		"dev-ui": "npm run start --prefix ui/",
-		"full-dev": "npm run full-dev --prefix Backend/"
+		"full-dev": "concurrently \"npm run dev-ui\" \"npm run dev-server\"",
+		"heroku-postbuild": "npm install --prefix ui/ && npm run build --prefix ui/"
 	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/caldwell619/newsite.git"
-	},
-	"keywords": [],
 	"author": "",
 	"license": "ISC",
-	"bugs": {
-		"url": "https://github.com/caldwell619/newsite/issues"
+	"dependencies": {
+		"body-parser": "^1.19.0",
+		"dotenv": "^8.0.0",
+		"express": "^4.17.1",
+		"mongodb": "^3.2.7",
+		"mongoose": "^5.6.2"
 	},
-	"homepage": "https://github.com/caldwell619/newsite#readme",
-	"devDependencies": {}
+	"devDependencies": {
+		"concurrently": "^4.1.1",
+		"nodemon": "^1.19.1"
+	}
 }

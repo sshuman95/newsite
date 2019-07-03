@@ -8,7 +8,7 @@ module.exports = app => {
 				res.json(comments);
 			});
 	});
-	app.get("/comment/:id", function(req, res) {
+	app.get("/comment/:id", (req, res) => {
 		Comment.update({ _id: req.params.id }, { $inc: { upvotes: 1 } }, function(
 			err,
 			count
