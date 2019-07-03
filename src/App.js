@@ -25,10 +25,10 @@ class App extends React.Component{
         </ul>
       </div>
       <Switch>
-          <Route exact path='/' component={AboutMe}/>
           <Route exact path='/Vote' component={VoteForm}/>
           <Route exact path='/Projects' component={Projects}/>
           <Route exact path='/Contact' component={Contact}/>
+          <Route exact path='/' component={AboutMe}/>
         </Switch>
       </BrowserRouter>
     )
