@@ -6,6 +6,7 @@ const comments = require('./routes/api/comments');
 const emails = require('./routes/api/email');
 const dotenv = require('dotenv');
 const keys = require("./config/keys");
+
 dotenv.config();
 
 app.use(bodyParser.json());
@@ -39,7 +40,3 @@ if (process.env.NODE_ENV !== "production") {
 const port = process.env.PORT || 8080;
 
 app.listen(port,()=>console.log(`Server started on port ${port}`));
-
-
-
-
