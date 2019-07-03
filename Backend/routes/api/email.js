@@ -1,7 +1,7 @@
 const Email = require("../../emailModel");
 
 module.exports = app => {
-	app.post("/", (req, res) => {
+	app.post("/email", (req, res) => {
 		const newEmail = new Email({
 			name: req.body.name,
 			email: req.body.email,

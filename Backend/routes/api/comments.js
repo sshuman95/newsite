@@ -1,14 +1,14 @@
 const Comment = require("../../commentsModel");
 
 module.exports = app => {
-	app.get("/", (req, res) => {
+	app.get("/comment", (req, res) => {
 		Comment.find()
 			.sort({ upvotes: -1 })
 			.then(comments => {
 				res.json(comments);
 			});
 	});
-	app.get("/:id", function(req, res) {
+	app.get("/comment/:id", function(req, res) {
 		Comment.update({ _id: req.params.id }, { $inc: { upvotes: 1 } }, function(
 			err,
 			count
@@ -16,7 +16,7 @@ module.exports = app => {
 			res.send();
 		});
 	});
-	app.post("/", (req, res) => {
+	app.post("/comment", (req, res) => {
 		const newComment = new Comment({
 			comment: req.body.comment
 		});

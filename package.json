@@ -4,7 +4,10 @@
 	"description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
 	"main": "index.js",
 	"scripts": {
-		"start": "npm run start --prefix Backend/"
+		"start": "npm run start --prefix Backend/",
+		"getting-started": "npm i --prefix Backend/ && npm i --prefix ui/",
+		"dev-ui": "npm run start --prefix ui/",
+		"full-dev": "npm run full-dev --prefix Backend/"
 	},
 	"repository": {
 		"type": "git",
@@ -16,5 +19,6 @@
 	"bugs": {
 		"url": "https://github.com/caldwell619/newsite/issues"
 	},
-	"homepage": "https://github.com/caldwell619/newsite#readme"
+	"homepage": "https://github.com/caldwell619/newsite#readme",
+	"devDependencies": {}
 }
