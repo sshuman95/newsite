@@ -12,16 +12,16 @@ class App extends React.Component{
 
   render(){
     return (
-      <BrowserRouter basename="/">
+      <BrowserRouter>
       <div id='opening'>
         <h1>Sidney Shuman</h1>
         <h3>Development Portfolio</h3>
         <img src='https://i.imgur.com/GfBXMmO.jpg' id='me'/>
         <ul>
-        <NavLink exact to='/'>Home</NavLink>
-        <NavLink exact to='/Projects'>Projects</NavLink>
-        <NavLink exact to='/Vote'>Vote</NavLink>
-        <NavLink exact to='/Contact'>Contact</NavLink>
+        <NavLink  to='/'>Home</NavLink>
+        <NavLink  to='/Projects'>Projects</NavLink>
+        <NavLink  to='/Vote'>Vote</NavLink>
+        <NavLink  to='/Contact'>Contact</NavLink>
         </ul>
       </div>
       <Switch>
