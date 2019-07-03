@@ -1,68 +1,35 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Sidney's Portfolio
 
-## Available Scripts
+## Getting Started
 
-In the project directory, you can run:
+To install all the necessary dependencies, run `npm run getting-started`.
 
-### `npm start`
+This will execute the script in `package.json` called `getting-started`.
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Running Locally
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+To run locally, execute:
 
-### `npm test`
+- `npm run dev-ui` to only work on the UI, with the server inactive.
+  - This will start the local server on `http://localhost:3000`
+- `npm run full-dev` to work on the server and the UI.
+  - This will start the server running on the specified port, as well as start the development server on `http://localhost:3000`
+  - This is done in the same process, so no need to start them independently
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Dependencies Used
 
-### `npm run build`
+Both `nodemon` and `concurrently` are being used.
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Nodemon
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+Nodemon is a cool package that watches changes to your files. When a change is detected, it will automatically restart your server.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Concurrently
 
-### `npm run eject`
+This is a package that executes parallel processes, such as running the server and the ui dev server at the same time.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Deployment
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+When pushed to Heroku's repository, it will execute `npm run start` on the **ROOT LEVEL** `package.json`.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Heroku has a special script that it looks for called `heroku-postbuild`. This script will execute after the initial configuration, and is what will build the UI to be served by express.
