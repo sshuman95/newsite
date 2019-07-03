@@ -1,44 +1,22 @@
 {
-  "name": "newsite",
-  "homepage":"https://still-ravine-83266.herokuapp.com/",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "axios": "^0.19.0",
-    "body-parser": "^1.19.0",
-    "dotenv": "^8.0.0",
-    "express": "^4.17.1",
-    "gh-pages": "^2.0.1",
-    "mongodb": "^3.2.7",
-    "mongoose": "^5.6.2",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-router": "^5.0.1",
-    "react-router-dom": "^5.0.1",
-    "react-scripts": "3.0.1"
-  },
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
   "scripts": {
-    "start": "npm run start --prefix Backend/",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "proxy": "http://localhost:8080"
+		"start": "node server.js",
+		"getting-started": "npm i && npm i --prefix ui/",
+		"dev-server": "nodemon server.js",
+		"dev-ui": "npm run start --prefix ui/",
+		"full-dev": "concurrently \"npm run dev-ui\" \"npm run dev-server\"",
+		"heroku-postbuild": "npm install --prefix ui/ && npm run build --prefix ui/"
+	},
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "mongodb": "^3.2.7",
+    "mongoose": "^5.6.2"
+  }
 }
-
-
