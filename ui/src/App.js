@@ -18,7 +18,7 @@ class App extends React.Component{
         <h3>Development Portfolio</h3>
         <img src='https://i.imgur.com/GfBXMmO.jpg' id='me'/>
         <ul>
-        <NavLink  to='/'>Home</NavLink>
+        <NavLink exact to='/'>Home</NavLink>
         <NavLink  to='/Projects'>Projects</NavLink>
         <NavLink  to='/Vote'>Vote</NavLink>
         <NavLink  to='/Contact'>Contact</NavLink>

@@ -6,6 +6,7 @@ const emails = require('./routes/api/email');
 const dotenv = require("dotenv");
 const keys = require("./config/keys");
 const app = express();
+
 dotenv.config();
 
 app.use(bodyParser.json());
@@ -35,6 +36,8 @@ if (process.env.NODE_ENV !== "production") {
 		res.sendFile(path.resolve(__dirname, "ui", "build", "index.html"));
 	});
 }
+
+
 
 const port = process.env.PORT || 8080;
 
