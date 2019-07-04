@@ -1,7 +1,8 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
-const routes = require("./routes/routes");
+const comments = require('./routes/api/comments');
+const emails = require('./routes/api/email');
 const dotenv = require("dotenv");
 const keys = require("./config/keys");
 const app = express();
@@ -20,9 +21,10 @@ mongoose
 	.then(() => console.log("MongoDB Connected"))
 	.catch(err => console.log(err));
 
-routes(app);
+	app.use('/api/comments',comments);
+	app.use('/api/email',emails);
 
-if (process.env.NODE_ENV !== "production") {
+if (process.env.NODE_ENV ==! "production") {
 	// express will serve production assets ( main.js, main.css )
 	// look inside client/build to serve assets
 	app.use(express.static("ui/build"));
