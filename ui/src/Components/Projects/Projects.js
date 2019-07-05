@@ -20,7 +20,7 @@ It will be used to sell the gym's merchandise.</p>
 let tea = (<div className='tea'>
 <h1>Soul Smith Kombucha</h1>
 <h3>About</h3>
-<p>This project was built using HTML, CSS, Javascript, and PHP. </p>
+<p>This project was built using HTML, CSS, Javascript, and PHP. It is a static webpage for a local Tea vendor.</p>
 <a style={{color:'white'}} href='http://www.soulsmithkombucha.com/'>Click Here To Visit</a>
 </div>)
 
