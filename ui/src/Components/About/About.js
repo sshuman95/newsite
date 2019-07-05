@@ -1,6 +1,6 @@
 import React from 'react';
 import './about.css';
-import Pdf from '../Resume/Sidney Shuman resume 6_25.pdf';
+import Pdf from '../Resume/Sidney Shuman Resume 7_5.pdf';
 
 class AboutMe extends React.Component{
     render(){
