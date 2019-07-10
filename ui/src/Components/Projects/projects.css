@@ -4,42 +4,45 @@
     justify-content: space-between;
     align-items: center;
     text-align: center;
-
+    height:80em;
 }
 
 
-.ravenous{
-    max-width:45em;
-    background-color:#61dbfb;
-    color:white;
-    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-    margin:2em auto;
+.project{
+    max-width:25em;
+    color:black;
+    margin-top:3em;
     flex-basis: 0;
+    height:35em;
+    border:1px solid black;
+    }
+.about{
+    border-top:1px solid black;
+    border-bottom:1px solid black;
+    margin-bottom:1em;
+    margin-top:-.25em;
 }
 
-.upstream{
-    max-width:45em;
-    background-color:	#134F2D;
-    color:white;
-    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-    margin:2em auto;
- 
+.buttons{
+    display:flex;
+    justify-content: space-evenly;
+    margin-bottom:1em;
 }
-
-.tea{
-    max-width:45em;
-    background-color:	black;
-    color:white;
-    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-    margin:2em auto;
-    
+.siteExample{
+    width:25em;
+    height:15em;
+    border-top:1px solid black;
 }
 
 @media only screen 
 and (min-device-width : 320px) 
 and (max-device-width : 480px) {
-.tea, .upstream, .ravenous{
+.project{
     width:20em;
-    height:19em;
 }
+
+.siteExample{
+    width:20em;
+}
+
 }

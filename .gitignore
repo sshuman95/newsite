@@ -25,3 +25,5 @@ yarn-error.log*
 # Config
 
 config/devKeys.js
+config/keys.js
+config/prodkeys.js
