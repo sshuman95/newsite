@@ -12,9 +12,12 @@ class VoteForm extends React.Component{
     constructor(props){
       super(props);
       this.state = {
-        comments: []
+        comments: [],
+        userComment:''
       }
       this.handleClickAdd=this.handleClickAdd.bind(this);
+      this.handleChange=this.handleChange.bind(this);
+      this.handleSubmit=this.handleSubmit.bind(this);
     }
 
     componentDidMount() {
@@ -40,7 +43,22 @@ class VoteForm extends React.Component{
     };
 
 
-  
+  handleSubmit(event){
+    let userComment=this.state.userComment;
+    fetch('/api/comments/',{method:'post' ,headers: {'Content-Type':'application/json'},body:JSON.stringify({
+      comment:userComment
+    })})
+    .catch(err=>{
+      console.log(err.code)
+    })
+  };
+
+  handleChange(event){
+    event.preventDefault()
+    this.setState({
+      userComment:event.target.value
+    })
+  };
 
   
 
@@ -48,24 +66,30 @@ class VoteForm extends React.Component{
       return (
         <div className='final'>
       <div>
-        <h3>What Should I build next?</h3>
-        <form action='/api/comments' method='post' id='form'>
-           <label>Suggestion: </label>
-           <textarea name='comment' required/>
-           <button type='submit'>Submit</button>
+        <Typography variant='h5' id='feedback'>Leave some feedback about the site</Typography>
+        <form onSubmit={this.handleSubmit} id='form'>
+           <TextField
+        id="standard-dense"
+        label="FeedBack"
+        name='newComment' value={this.state.newComment} onChange={this.handleChange} required
+      />
+           <Button variant="contained" type='submit' id='btn'>
+           Submit
+      </Button>
        </form>
        </div>
        <div>
          {this.state.comments.map(comment=>{
            return (
              <div key={comment._id} id='comments'>
-               <Card className='card'>
-                  <CardContent>
+               <Card id='card'>
+                  <CardContent >
                   <Typography>{comment.comment}</Typography>
+                  <br/>
                   <Typography>Number of Votes: {comment.upvotes}</Typography>
                 </CardContent>
                 <CardActions>
-                <Button value={comment._id} onClick={this.handleClickAdd}>+</Button>
+                <Button value={comment._id} onClick={this.handleClickAdd} id='plusOne'>+</Button>
                 </CardActions>
             </Card>
            </div>
