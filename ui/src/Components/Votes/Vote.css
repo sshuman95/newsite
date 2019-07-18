@@ -47,10 +47,6 @@ text-align: center;
     cursor:pointer;
 }
 
-textarea{
-    max-width:22em;
-}
-
 
 @media only screen 
 and (min-device-width : 320px) 
@@ -64,4 +60,15 @@ and (max-device-width : 480px) {
  #comments{
      font-size:.6em;
  }
+ .final{
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+ }
 }
+
+
+#standard-dense{
+    margin-top:3em;
+}
+

@@ -5,23 +5,25 @@ import Projects from './Components/Projects/Projects.js';
 import Contact from './Components/Contact/Contact.js';
 import {Route,BrowserRouter,Switch,NavLink} from 'react-router-dom';
 import './App.css';
-
+import Typography from '@material-ui/core/Typography';
 
 class App extends React.Component{
-
-
   render(){
     return (
       <BrowserRouter>
       <div id='opening'>
-        <h1>Sidney Shuman</h1>
-        <h3>Development Portfolio</h3>
+      <Typography  variant="h4">
+            Sidney Shuman
+            </Typography>
+            <Typography  variant="h5">
+            Development Portfolio
+            </Typography>
         <img src='https://i.imgur.com/GfBXMmO.jpg' id='me'/>
         <ul>
-        <NavLink exact to='/'>Home</NavLink>
-        <NavLink  to='/Projects'>Projects</NavLink>
-        <NavLink  to='/Vote'>Vote</NavLink>
-        <NavLink  to='/Contact'>Contact</NavLink>
+        <NavLink exact to='/'><Typography variant="h5">Home</Typography></NavLink>
+        <NavLink  to='/Projects'><Typography variant="h5">Projects</Typography></NavLink>
+        <NavLink  to='/Vote'><Typography variant="h5">Vote</Typography></NavLink>
+        <NavLink  to='/Contact'><Typography variant="h5">Contact</Typography></NavLink>
         </ul>
       </div>
       <Switch>
