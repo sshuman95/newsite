@@ -15,7 +15,6 @@ class VoteForm extends React.Component{
         comments: []
       }
       this.handleClickAdd=this.handleClickAdd.bind(this);
-      this.handleChange=this.handleChange.bind(this);
     }
 
     componentDidMount() {
@@ -41,27 +40,18 @@ class VoteForm extends React.Component{
     };
 
 
-    handleChange(event){
-      event.preventDefault();
-      this.setState({
-        [event.target.name]:event.target.value
-      })
-     };
+  
+
+  
 
     render(){
       return (
         <div className='final'>
       <div>
         <h3>What Should I build next?</h3>
-       <form action='/api/comments' method='post' id='form'>
-       <TextField
-        id="standard-dense"
-        label="Comment"
-        margin="dense"
-        value={this.state.userComment}
-        onChange={this.handleChange}
-        name='userComment'
-      />
+        <form action='/api/comments' method='post' id='form'>
+           <label>Suggestion: </label>
+           <textarea name='comment' required/>
            <button type='submit'>Submit</button>
        </form>
        </div>

@@ -22,6 +22,7 @@ router.post('/',(req,res)=>{
        comment: req.body.comment
    });
    newComment.save().then(comment=>res.json(comment));
+   res.redirect('back');
 });
 
 

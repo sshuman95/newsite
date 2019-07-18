@@ -55,7 +55,8 @@ and (max-device-width : 480px) {
         margin-top:0;
     }
  #form textarea{
-     width:10em;
+     margin-top:1em;
+     width:17em;
  }
  #comments{
      font-size:.6em;
