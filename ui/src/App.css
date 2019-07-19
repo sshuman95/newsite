@@ -58,4 +58,9 @@ and (max-device-width : 480px) {
     font-size:1em;
     margin-left:-2em;
   }
+
+  #me{
+    height:5em;
+    width:5em;
+  }
 }

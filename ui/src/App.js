@@ -22,7 +22,7 @@ class App extends React.Component{
         <ul>
         <NavLink exact to='/'><Typography variant="h5">Home</Typography></NavLink>
         <NavLink  to='/Projects'><Typography variant="h5">Projects</Typography></NavLink>
-        <NavLink  to='/Vote'><Typography variant="h5">Vote</Typography></NavLink>
+        <NavLink  to='/Vote'><Typography variant="h5">Feedback</Typography></NavLink>
         <NavLink  to='/Contact'><Typography variant="h5">Contact</Typography></NavLink>
         </ul>
       </div>

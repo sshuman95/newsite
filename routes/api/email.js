@@ -10,8 +10,7 @@ router.post('/',(req,res)=>{
         email:req.body.email,
         message:req.body.message
     });
-    newEmail.save().then(comment=>res.json(comment));
-    res.redirect('back');
+    newEmail.save().then(newEmail=>res.json(newEmail));
  });
 
 
