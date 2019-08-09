@@ -9,18 +9,13 @@
   position: relative;
   margin-top:0;
   text-align: center;
+  height:20em;
 }
 
 h1{
   margin:0;
 }
 
-#me{
-  height:12em;
-  width:12em;
-  border-radius: 75%;
-  margin: 0 auto;
-}
 
 ul{
   display: flex;
@@ -29,7 +24,7 @@ ul{
   align-items: center;
   font-size:2em;
   list-style: none;
-  margin:0 auto;
+  margin:5.5em auto 0 auto;
 }
 
 .Nav{
@@ -58,9 +53,5 @@ and (max-device-width : 480px) {
     font-size:1em;
     margin-left:-2em;
   }
-
-  #me{
-    height:5em;
-    width:5em;
-  }
 }
+

@@ -31,20 +31,22 @@ class VoteForm extends React.Component{
   }
     handleClickAdd(event){
       event.preventDefault();
-     let found = (event.target.parentElement.value);
-    let test =  this.state.comments.find(comment=>comment._id===found);
+      let found = (event.target.parentElement.value);
+      let test =  this.state.comments.find(comment=>comment._id===found);
       test.upvotes +=1;
-     this.setState({
+      this.setState({
        comments:[...this.state.comments]
-     });
-    fetch(`/api/comments/${found}`)
-    };
+      });
+      fetch(`/api/comments/${found}`)
+      };
 
 
   handleSubmit(event){
     event.preventDefault();
+    event.target.reset();
     let userComment=this.state.userComment;
-    fetch('/api/comments/',{method:'post' ,headers: {'Content-Type':'application/json'},body:JSON.stringify({
+    fetch('/api/comments/',{method:'post' ,headers: {'Content-Type':'application/json'},
+    body:JSON.stringify({
       comment:userComment
     })})
     .then(()=>{
@@ -53,7 +55,7 @@ class VoteForm extends React.Component{
           return response.json();
         })
         .then((comments) => { 
-          this.setState({ comments:comments }); 
+          this.setState({ comments:comments}); 
         });
     })
     .catch(err=>{

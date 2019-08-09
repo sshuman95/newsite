@@ -1,8 +1,11 @@
-textarea{
-    height:7em;
-    width:20em;
-}
+
 
 #submit{
     margin-top:1em;
+};
+
+.standard-dense{
+    margin-bottom:10em;
 }
+
+

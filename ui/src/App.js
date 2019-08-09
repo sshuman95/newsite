@@ -18,7 +18,7 @@ class App extends React.Component{
             <Typography  variant="h5">
             Development Portfolio
             </Typography>
-        <img src='https://i.imgur.com/GfBXMmO.jpg' id='me'/>
+        
         <ul>
         <NavLink exact to='/'><Typography variant="h5">Home</Typography></NavLink>
         <NavLink  to='/Projects'><Typography variant="h5">Projects</Typography></NavLink>

@@ -14,6 +14,36 @@ class Projects extends React.Component{
     render(){
       return (
         <div id='cardContainer'>
+               <Card className='card'>
+        <CardActionArea>
+          <CardMedia
+            image="https://i.imgur.com/ugnRzYl.png"
+            title="Home History"
+            className='cardImage'
+          />
+          <CardContent>
+            <Typography gutterBottom variant="h5" component="h2">
+            Home History
+            </Typography>
+            <Typography variant="body2" color="textSecondary" component="p">
+            This a full stack application built with React, Express, Node, and Firebase. Users can query firebase to retrieve data about their home. 
+            Service professionals can login and post reports to firebase.
+            </Typography>
+          </CardContent>
+        </CardActionArea>
+        <CardActions>
+          <Button size="small" color="primary">
+            Contact me for Source Code 
+          </Button>
+        </CardActions>
+        <CardActions>
+          <Button size="small" color="primary" href='https://homehistory.org'>
+            Visit
+          </Button>
+        </CardActions>
+      </Card>
+
+
         <Card className='card'>
         <CardActionArea>
           <CardMedia

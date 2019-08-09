@@ -54,17 +54,19 @@ class Contact extends React.Component{
         </div>
         <form style={{display:'flex',flexDirection:'column',justifyContent:'center',alignItems:'center'}} onSubmit={this.handleSubmit}> 
         <TextField
-        id="standard-dense"
+        
         label="Name"
         name='name' value={this.state.name} onChange={this.handleChange} required
       />
+      <br/>
       <TextField
-        id="standard-dense"
+        className="standard-dense"
         label="Email"
         name='email' value={this.state.email} onChange={this.handleChange} required
       />
+      <br/>
       <TextField
-        id="standard-dense"
+        className="standard-dense"
         label="Message"
         lines='4'
         name='message' value={this.state.message} onChange={this.handleChange} required
