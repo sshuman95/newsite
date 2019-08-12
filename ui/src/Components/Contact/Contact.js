@@ -1,12 +1,34 @@
 import React from 'react';
-import './Contact.css'
 import TextField from '@material-ui/core/TextField';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import Icon from '@material-ui/core/Icon';
+import {withStyles} from '@material-ui/core';
+
+const styles = {
+container:{
+  display: 'flex',
+    flexDirection: 'column',
+    
+    alignItems:'center',
+    backgroundPosition:'center',
+    backgroundRepeat:'no-repeat',
+    backgroundSize:'cover',
+    backgroundImage:"url(https://i.imgur.com/MPL1LGb.png)",
+    height:950
+},
+form:{
+  display:'flex',
+  flexDirection:'column',
+  fontFamily:'Oswald'
+},
+main:{
+  marginTop:200,
+  textAlign:'center'
+}
+}
 
 
 class Contact extends React.Component{
@@ -46,13 +68,14 @@ class Contact extends React.Component{
     };
 
     render(){
+      const {classes} = this.props;
       return (
-        <div>
-          <div style={{display:'flex',flexDirection:'column',justifyContent:'center',alignItems:'center'}}>
-       <Typography variant='h5'>Contact me at Sidney.shuman95@gmail.com</Typography>
-       <Typography variant='h6'>Or fill out the form below</Typography>
+        <div className={classes.container}>
+          <div className={classes.main}>
+       <Typography variant='h5' style={{fontFamily:'Oswald'}}>Contact me at Sidney.shuman95@gmail.com</Typography>
+       <Typography variant='h6' style={{fontFamily:'Oswald'}}>Or fill out the form below</Typography>
         </div>
-        <form style={{display:'flex',flexDirection:'column',justifyContent:'center',alignItems:'center'}} onSubmit={this.handleSubmit}> 
+        <form onSubmit={this.handleSubmit} className={classes.form}> 
         <TextField
         
         label="Name"
@@ -71,6 +94,7 @@ class Contact extends React.Component{
         lines='4'
         name='message' value={this.state.message} onChange={this.handleChange} required
       />
+      <br/>
           <Button variant="contained" type='submit' id='btn'>
            Submit
       </Button>
@@ -81,4 +105,4 @@ class Contact extends React.Component{
   
   }
   
-  export default Contact;
+  export default withStyles(styles)(Contact);

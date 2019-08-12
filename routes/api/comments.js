@@ -29,28 +29,3 @@ router.post('/',(req,res)=>{
 
 module.exports = router;
 
-/*router.put('/:id',(req,res,next)=>{
-    let id = req.params.id;
-    Comment.findOne({_id:id, function(err,foundObject){
-        if(err){
-            console.log(err);
-            res.status(500).send()
-        }else{
-            if(!foundObject){
-                res.status(404).send();
-            } else{
-                if(req.body.upvotes){
-                    foundObject.upvotes = req.body.upvotes;
-                }
-                foundObject.save(function(err, updatedObject){
-                    if(err){
-                        console.log(err);
-                        res.status(500)
-                    } else {
-                        res.send(updatedObject)
-                    }
-                })
-            }
-        }
-    }})
-})*/

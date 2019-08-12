@@ -1,12 +1,54 @@
 import React from 'react';
-import './Vote.css';
+
 import TextField from '@material-ui/core/TextField';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import Icon from '@material-ui/core/Icon';
+import {withStyles} from '@material-ui/core';
+
+const styles={
+    container:{
+      display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems:'top',
+    backgroundPosition:'center',
+    backgroundRepeat:'no-repeat',
+    backgroundSize:'cover',
+    backgroundImage:"url(https://i.imgur.com/MPL1LGb.png)",
+    height:1200,
+    },
+    input:{
+      display:'flex',
+      justifyContent:'center',
+      flexDirection:'column',
+      alignItems:'center'
+    },
+    form:{
+      display:'flex',
+      justifyContent:'center',
+      flexDirection:'column',
+      alignItems:'center',
+      marginBottom:20,
+      
+    },
+    card:{
+      display:'flex',
+      justifyContent:'center',
+      flexDirection:'column',
+      alignItems:'center',
+      textAlign:'center',
+      width:300,
+      margin:'0 auto'
+    },
+    typography:{
+      '@media (max-width:550px)': {
+        fontSize: 20
+      },
+    }
+}
 
 class VoteForm extends React.Component{
     constructor(props){
@@ -73,16 +115,19 @@ class VoteForm extends React.Component{
   
 
     render(){
+      const {classes} =this.props;
       return (
-        <div className='final'>
-      <div>
-        <Typography variant='h5' id='feedback'>Leave some feedback about the site</Typography>
-        <form onSubmit={this.handleSubmit} id='form'>
+        <div className={classes.container}>
+      <div className={classes.input}>
+        <Typography variant='h5' style={{fontFamily:'Oswald'}}>Leave some feedback about the site</Typography>
+        <form onSubmit={this.handleSubmit} className={classes.form} >
            <TextField
-        id="standard-dense"
+        className={classes.textField}
         label="FeedBack"
+       
         name='newComment' value={this.state.newComment} onChange={this.handleChange} required
       />
+      <br/>
            <Button variant="contained" type='submit' id='btn'>
            Submit
       </Button>
@@ -92,11 +137,11 @@ class VoteForm extends React.Component{
          {this.state.comments.map(comment=>{
            return (
              <div key={comment._id} id='comments'>
-               <Card id='card'>
+               <Card className={classes.card}>
                   <CardContent >
-                  <Typography>{comment.comment}</Typography>
+                  <Typography style={{fontFamily:'Oswald'}}>{comment.comment}</Typography>
                   <br/>
-                  <Typography>Number of Votes: {comment.upvotes}</Typography>
+                  <Typography style={{fontFamily:'Oswald'}}>Number of Votes: {comment.upvotes}</Typography>
                 </CardContent>
                 <CardActions>
                 <Button value={comment._id} onClick={this.handleClickAdd} id='plusOne'>+</Button>
@@ -112,4 +157,4 @@ class VoteForm extends React.Component{
   
   }
   
-  export default VoteForm;
+  export default withStyles(styles)(VoteForm);
