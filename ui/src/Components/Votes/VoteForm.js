@@ -12,19 +12,19 @@ const styles={
     container:{
       display: 'flex',
     flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems:'top',
+    alignItems:'center',
     backgroundPosition:'center',
     backgroundRepeat:'no-repeat',
     backgroundSize:'cover',
     backgroundImage:"url(https://i.imgur.com/MPL1LGb.png)",
-    height:1200,
+    height:1000,
     },
     input:{
       display:'flex',
       justifyContent:'center',
       flexDirection:'column',
-      alignItems:'center'
+      alignItems:'center',
+      marginTop:150
     },
     form:{
       display:'flex',

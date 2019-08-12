@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import TextField from '@material-ui/core/TextField';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
@@ -26,7 +26,10 @@ form:{
 },
 main:{
   marginTop:200,
-  textAlign:'center'
+  textAlign:'center',
+  '@media (max-width:550px)': {
+    marginTop:100
+  },
 }
 }
 
@@ -37,7 +40,8 @@ class Contact extends React.Component{
       this.state = {
         name:'',
         email:'',
-        message:''
+        message:'',
+        sent:false
       }
       this.handleChange = this.handleChange.bind(this);
       this.handleSubmit=this.handleSubmit.bind(this);
@@ -60,7 +64,9 @@ class Contact extends React.Component{
         message:userMessage
       })})
       .then(()=>{
-        alert('Thank you! Your message has been received.')
+        this.setState({
+          sent:true
+        })
       })
       .catch(err=>{
         console.log(err.code)
@@ -71,6 +77,7 @@ class Contact extends React.Component{
       const {classes} = this.props;
       return (
         <div className={classes.container}>
+          {!this.state.sent?<Fragment>
           <div className={classes.main}>
        <Typography variant='h5' style={{fontFamily:'Oswald'}}>Contact me at Sidney.shuman95@gmail.com</Typography>
        <Typography variant='h6' style={{fontFamily:'Oswald'}}>Or fill out the form below</Typography>
@@ -99,6 +106,8 @@ class Contact extends React.Component{
            Submit
       </Button>
         </form>
+        </Fragment>:
+      <Typography variant='h3' style={{fontFamily:'Oswald',marginTop:250}}>Thank you for you input!</Typography>}
         </div>
       )
     }
