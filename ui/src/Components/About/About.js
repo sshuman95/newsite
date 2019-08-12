@@ -47,9 +47,3 @@ class AboutMe extends React.Component{
   }
   
   export default withStyles(styles)(AboutMe);
-
-  /*<Slide direction="down" mountOnEnter unmountOnExit in={true}>
-          <Paper className={classes.paper}>
-        
-          </Paper>
-        </Slide> */
