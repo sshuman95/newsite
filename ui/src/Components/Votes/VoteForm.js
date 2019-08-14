@@ -136,7 +136,7 @@ class VoteForm extends React.Component{
        <div>
          {this.state.comments.map(comment=>{
            return (
-             <div key={comment._id} id='comments'>
+             <div key={comment._id} id='comments' style={{marginTop:50}}>
                <Card className={classes.card}>
                   <CardContent >
                   <Typography style={{fontFamily:'Oswald'}}>{comment.comment}</Typography>
