@@ -10,21 +10,23 @@ import {withStyles} from '@material-ui/core';
 
 const styles={
     container:{
-      display: 'flex',
-    flexDirection: 'column',
-    alignItems:'center',
-    backgroundPosition:'center',
-    backgroundRepeat:'no-repeat',
-    backgroundSize:'cover',
-    backgroundImage:"url(https://i.imgur.com/MPL1LGb.png)",
-    height:1000,
+      display:'flex',
+      width:'100%',
+      backgroundPosition:'center',
+      backgroundRepeat:'no-repeat',
+      backgroundSize:'cover',
+      backgroundImage:'url(https://i.imgur.com/MPL1LGb.png)',
+      flexDirection:'column',
+      position:'absolute',
+      minHeight:'100%'
     },
     input:{
       display:'flex',
       justifyContent:'center',
       flexDirection:'column',
       alignItems:'center',
-      marginTop:150
+      marginTop:150,
+      
     },
     form:{
       display:'flex',
@@ -32,7 +34,6 @@ const styles={
       flexDirection:'column',
       alignItems:'center',
       marginBottom:20,
-      
     },
     card:{
       display:'flex',
@@ -41,13 +42,14 @@ const styles={
       alignItems:'center',
       textAlign:'center',
       width:300,
-      margin:'0 auto'
+      margin:'0 auto',
     },
     typography:{
       '@media (max-width:550px)': {
         fontSize: 20
       },
-    }
+    },
+    
 }
 
 class VoteForm extends React.Component{
@@ -133,10 +135,10 @@ class VoteForm extends React.Component{
       </Button>
        </form>
        </div>
-       <div>
+       <div className={classes.comments}>
          {this.state.comments.map(comment=>{
            return (
-             <div key={comment._id} id='comments' style={{marginTop:50}}>
+             <div key={comment._id} style={{marginTop:50}}>
                <Card className={classes.card}>
                   <CardContent >
                   <Typography style={{fontFamily:'Oswald'}}>{comment.comment}</Typography>

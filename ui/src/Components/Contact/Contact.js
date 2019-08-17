@@ -6,20 +6,26 @@ import {withStyles} from '@material-ui/core';
 
 const styles = {
 container:{
-  display: 'flex',
-    flexDirection: 'column',
-    
-    alignItems:'center',
-    backgroundPosition:'center',
-    backgroundRepeat:'no-repeat',
-    backgroundSize:'cover',
-    backgroundImage:"url(https://i.imgur.com/MPL1LGb.png)",
-    height:950
+  overflow:'hidden',
+      display:'flex',
+     minHeight:'100%',
+      width:'100%',
+      backgroundPosition:'center',
+      backgroundRepeat:'no-repeat',
+      backgroundSize:'cover',
+      backgroundImage:'url(https://i.imgur.com/MPL1LGb.png)',
+      flexDirection:'column',
+      position:'absolute',
 },
 form:{
   display:'flex',
   flexDirection:'column',
-  fontFamily:'Oswald'
+  fontFamily:'Oswald',
+  width:'25%',
+  margin:'0 auto',
+  '@media (max-width:550px)': {
+    width:'45%'
+  },
 },
 main:{
   marginTop:200,

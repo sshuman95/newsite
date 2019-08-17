@@ -22,15 +22,10 @@ const styles={
     '@media (max-width:550px)': {
       fontSize: 15
     },
-  }
+  },
 }
 
 class App extends React.Component{
-  constructor(props){
-    super(props);
-    
-  };
-
   render(){
     const {classes}=this.props;
     return (
@@ -47,7 +42,7 @@ class App extends React.Component{
           <Route exact path='/Vote' component={VoteForm}/>
           <Route exact path='/Projects' component={Projects}/>
           <Route exact path='/Contact' component={Contact}/>
-          <Route exact path='/' component={AboutMe}/>
+          <Route exact path='/' component={AboutMe} />
         </Switch>
       </BrowserRouter>
     )
