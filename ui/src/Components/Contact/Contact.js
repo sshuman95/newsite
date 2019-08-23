@@ -109,7 +109,7 @@ class Contact extends React.Component{
       </Button>
         </form>
         </Fragment>:
-      <Typography variant='h3' style={{fontFamily:'Oswald',marginTop:250}}>Thank you for your input!</Typography>}
+      <Typography variant='h3' style={{fontFamily:'Oswald',marginTop:250, textAlign:'center'}}>Thank you for your input!</Typography>}
         </div>
       )
     }
