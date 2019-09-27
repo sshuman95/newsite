@@ -1,40 +1,8 @@
-import React, { Fragment } from 'react';
-import TextField from '@material-ui/core/TextField';
-import Button from '@material-ui/core/Button';
+import React from 'react';
+import './Contact.css';
 import Typography from '@material-ui/core/Typography';
-import {withStyles} from '@material-ui/core';
 
-const styles = {
-container:{
-  overflow:'hidden',
-      display:'flex',
-     minHeight:'100%',
-      width:'100%',
-      backgroundPosition:'center',
-      backgroundRepeat:'no-repeat',
-      backgroundSize:'cover',
-      backgroundImage:'url(https://i.imgur.com/MPL1LGb.png)',
-      flexDirection:'column',
-      position:'absolute',
-},
-form:{
-  display:'flex',
-  flexDirection:'column',
-  fontFamily:'Oswald',
-  width:'25%',
-  margin:'0 auto',
-  '@media (max-width:550px)': {
-    width:'45%'
-  },
-},
-main:{
-  marginTop:200,
-  textAlign:'center',
-  '@media (max-width:550px)': {
-    marginTop:100
-  },
-}
-}
+
 
 
 class Contact extends React.Component{
@@ -44,7 +12,7 @@ class Contact extends React.Component{
         name:'',
         email:'',
         message:'',
-        sent:false
+        sent:false,
       }
       this.handleChange = this.handleChange.bind(this);
       this.handleSubmit=this.handleSubmit.bind(this);
@@ -76,44 +44,54 @@ class Contact extends React.Component{
     };
 
     render(){
-      const {classes} = this.props;
       return (
-        <div className={classes.container}>
-          {!this.state.sent?<Fragment>
-          <div className={classes.main}>
-       <Typography variant='h5' style={{fontFamily:'Oswald'}}>Contact me at Sidney.shuman95@gmail.com</Typography>
-       <Typography variant='h6' style={{fontFamily:'Oswald'}}>Or fill out the form below</Typography>
-        </div>
-        <form onSubmit={this.handleSubmit} className={classes.form}> 
-        <TextField
-        
-        label="Name"
+        <div id='container'>
+          {!this.state.sent?
+          <div className='form-container'>
+       <h1 style={{fontFamily:'Overwatch',color:'white'}}>Contact me at Sidney.shuman95@gmail.com</h1>
+       <h2  style={{fontFamily:'Overwatch',color:'white'}}>Or fill out the form below</h2>
+       <form onSubmit={this.handleSubmit}> 
+        <input
+        className='contact-form-input'
+        placeholder='Name'
         name='name' value={this.state.name} onChange={this.handleChange} required
       />
-      <br/>
-      <TextField
-        className="standard-dense"
-        label="Email"
+      <input
+      className='contact-form-input'
+        placeholder="Email"
         name='email' value={this.state.email} onChange={this.handleChange} required
       />
-      <br/>
-      <TextField
-        className="standard-dense"
-        label="Message"
-        lines='4'
+      <input
+      className='contact-form-input'
+        placeholder="Message"
         name='message' value={this.state.message} onChange={this.handleChange} required
       />
-      <br/>
-          <Button variant="contained" type='submit' id='btn'>
-           Submit
-      </Button>
-        </form>
-        </Fragment>:
-      <Typography variant='h3' style={{fontFamily:'Oswald',marginTop:250, textAlign:'center'}}>Thank you for your input!</Typography>}
+          <button type='submit'>SUBMIT</button>
+        </form> 
+        </div>
+        :
+      <Typography variant='h3' style={{fontFamily:'Overwatch',color:'white',marginTop:250, textAlign:'center'}}>Thank you for your input!</Typography>}
         </div>
       )
     }
   
   }
   
-  export default withStyles(styles)(Contact);
+  export default Contact;
+
+  /*        <form onSubmit={this.handleSubmit} id='form'> 
+        <input
+        label="Name"
+        name='name' value={this.state.name} onChange={this.handleChange} required
+      />
+      <input
+        label="Email"
+        name='email' value={this.state.email} onChange={this.handleChange} required
+      />
+      <input
+        label="Message"
+        lines='4'
+        name='message' value={this.state.message} onChange={this.handleChange} required
+      />
+          <button type='submit'>SUBMIT</button>
+        </form> */

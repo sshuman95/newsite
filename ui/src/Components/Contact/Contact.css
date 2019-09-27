@@ -1,0 +1,77 @@
+.form-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    width:100%;
+}
+
+.contact-form-input{
+    width:50%;
+    margin: 1em auto;
+    background-color: transparent;
+    border-top:none;
+    border-left:none;
+    border-right:none;
+    color:white;
+    height:3em;
+    font-size:1em;
+    outline-width:0;
+    -webkit-box-shadow: 10px 10px 79px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 79px 0px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 79px 0px rgba(0,0,0,0.75);
+    border-radius: 10px;
+}
+
+form button{
+    width:25%;
+    height:25%;
+    margin:0 auto;
+    border-radius: 10px;
+    background-color: white;
+    border-color: white;
+    font-family: 'Roboto';
+    
+}
+
+form button:hover{
+    background-color: gold;
+    border-color:gold;
+}
+
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: grey;
+    font-weight: bold;
+    opacity: 1; /* Firefox */
+  }
+  
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: grey;
+    font-weight: bold;
+  }
+  
+  ::-ms-input-placeholder { /* Microsoft Edge */
+    color: grey;
+    font-weight: bold;
+  }
+
+
+
+  
+@media only screen and (max-width:600px){
+.form-container{
+    font-size:.55em;
+    margin-top:15em;
+}
+
+form button{
+    width:50%;
+}
+}

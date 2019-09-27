@@ -3,43 +3,33 @@ import './about.css';
 import Pdf from '../Resume/Sidney Shuman Resume current.pdf';
 import {withStyles,Typography} from '@material-ui/core';
 import Fade from '@material-ui/core/Fade';
+import Projects from '../Projects/Projects';
 
 
 const styles={
   container:{
-    marginTop:0,
-    overflow:'hidden',
+    marginTop:15,
     display:'flex',
-   minHeight:'100%',
-    width:'100%',
-    backgroundPosition:'center',
-    backgroundRepeat:'no-repeat',
-    backgroundSize:'cover',
-    backgroundImage:'url(https://i.imgur.com/MPL1LGb.png)',
+    justifyContent:'center',
+    alignItems:'center',
     flexDirection:'column',
-    position:'absolute'
+    justifyContent:'center',
+    textAlign:'center',
+    height:300,
+    marginBottom:0,
+    '@media (min-width:550px)': {
+      display:'flex',
+      justifyContent:'center',
+      alignItems:'center',
+      flexDirection:'column'
+    },
   },
- typography:{
-  fontFamily:'Oswald',
-  textAlign:'center',
- },
- header:{
-   display:'flex',
-   flexDirection:'column',
-   margin:'100px auto 0 auto',
-   height:'100%',
-   position:'relative',
-   marginBottom:20
- },
- logo:{
-   height:35,
-   width:35
- },
- logoContainer:{
-   display:'flex',
-   justifyContent:'space-evenly',
-   marginTop:20
- }
+  typography:{
+    fontFamily:'Oswald',
+  },
+  logoContainer:{
+    marginTop:20
+  }
 }
 
 
@@ -85,8 +75,7 @@ class AboutMe extends React.Component{
           </Fade>
           </div>
           <br/>
-          <a href={Pdf} style={{margin:'0 auto',color:'black'}}>Resume</a>
-      </div>
+          </div>
       )
     }
   

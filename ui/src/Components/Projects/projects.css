@@ -1,35 +1,103 @@
 #cardContainer{
+    height:100%;
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    -webkit-box-shadow: 10px 10px 79px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 10px 10px 79px 0px rgba(0,0,0,0.75);
+box-shadow: 10px 10px 79px 0px rgba(0,0,0,0.75);
+}
+
+.card-top{
+   
+    height:50%;
+    width:65%;
     display: flex;
     justify-content: center;
-    flex-direction: column;
     align-items: center;
-    background-position:center;
-    background-repeat:no-repeat;
-    background-size:cover;
-    background-image:url('https://i.imgur.com/MPL1LGb.png');
 }
 
-.cardImage{
-    height:20em;
+.card-top img{
+   
+    height:100%;
+    width:100%;
+    
 }
 
-.card{
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    margin-top:2em;
-    width:30em;
+.card-bottom{
+    height:50%;
+    width:65%;
+    display: flex;
+    justify-content: space-around;
+    background-color: whitesmoke;
+    
+}
+
+.card-bottom h2{
+    font-family: "Overwatch";
+    text-decoration: underline;
+    text-decoration-color: gold;
+}
+
+.details{
+    width:100%;
+    display: flex;
     flex-direction: column;
+    text-align: center;
+    font-family: 'Overwatch';
+}
+
+.stack{
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-family: 'Overwatch';
+
+}
+
+.stack p {
+    margin:0em;
+}
+
+.links{
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-family: 'Roboto';
+}
+
+.links button{
+    margin:1em;
+    border-radius: 10px;
+    background-color: white;
+    -webkit-box-shadow: 1px 1px 1px 1px  gold;
+    -moz-box-shadow: 1px 1px 1px 1px  gold;
+    box-shadow: 1px 1px 1px 1px  gold;
+    cursor:pointer;
+    
+    font-family: 'Roboto';
 }
 
 
-@media only screen 
-and (min-device-width : 320px) 
-and (max-device-width : 480px) {
-    .card{
-        width:15em;
+
+
+@media only screen and (max-width:500px){
+    .card-top{
+        display:none;
     }
-    .cardImage{
-        height:10em;
+
+    .card-bottom{
+        height:80%;
+        width:90%;
+        flex-direction:column;
+        text-align: center;
+        font-size:.8em;
     }
-}
+
+    }
+    
+
