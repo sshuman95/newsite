@@ -1,9 +1,9 @@
 .form-container{
     display: flex;
     flex-direction: column;
+    text-align: center;
     justify-content: center;
     align-items: center;
-    text-align: center;
 }
 
 form{
@@ -67,8 +67,7 @@ form button:hover{
   
 @media only screen and (max-width:600px){
 .form-container{
-    font-size:.55em;
-    margin-top:15em;
+    font-size:.6em;
 }
 
 form button{
