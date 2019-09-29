@@ -2,6 +2,9 @@ import React from 'react';
 import './App.css';
 import Contact from './Components/Contact/Contact';
 import Projects from './Components/Projects/Projects';
+import About from './Components/About/About';
+import Pdf from './Components/Resume/sidney_shuman_resume.pdf';
+
 
 class App extends React.Component{
   constructor(props){
@@ -15,6 +18,7 @@ class App extends React.Component{
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleAppChange = this.handleAppChange.bind(this);
     this.handleApp = this.handleApp.bind(this);
+    this.handleAbout = this.handleAbout.bind(this);
   }
 
   handleChange(event){
@@ -52,9 +56,18 @@ handleApp(){
     case 'projects':
       return <Projects/>
       break;
+      case 'about':
+        return <About/>
+        break;
     default:
       return
   }
+};
+
+handleAbout(){
+  this.setState({
+    status:"about"
+  })
 }
 
   render(){
@@ -79,6 +92,7 @@ handleApp(){
         </div>
       </div>
       </div>
+
       <div id='grid'>
       <h1 className='portfolio'>Portfolio</h1>
         <div className='projects'>
@@ -86,7 +100,7 @@ handleApp(){
         </div>
 
         <div className='resume'>
-          <h3 style={{fontFamily:'Overwatch'}} onClick={this.handleAppChange} id='resume'>Resume</h3>
+        <a href={Pdf} target='_blank'><h3 style={{fontFamily:'Overwatch'}} id='resume'>Resume</h3></a>
         </div>
 
         <div className='contact'>
@@ -94,13 +108,13 @@ handleApp(){
         </div>
 
         <div className='about-me'>
-          <p>About</p>
+          <p onClick={this.handleAbout}>About</p>
         </div>
         <div className='linkedIn'>
-          <p>LinkedIn</p>
+          <p><a href='https://www.linkedin.com/in/sidney-shuman-604966160/' target='_blank'>LinkedIn</a></p>
         </div>
         <div className='Github'>
-          <p>Github</p>
+        <p><a href='https://github.com/sshuman95' target='_blank'>Github</a></p>
         </div>
         <div className='content'>
           {this.handleApp()}
@@ -131,5 +145,5 @@ handleApp(){
 export default App;
 
 /*
- <img src='https://i.pinimg.com/originals/a4/00/39/a40039d16016face7aade4f7661c0d16.jpg' className='main-img'/>
+ <img src='https://cdn.imgbin.com/25/4/5/imgbin-characters-of-overwatch-tracer-sombra-rendering-jeux-Z9u7KRC8z0ztAwxhvt8W4fMAF.jpg' className='main-img'/>
 */
